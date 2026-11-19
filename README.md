@@ -59,4 +59,4 @@ add() adds 2. I called add() twice, so items became 4. Then items = 4 + 1
 = 5, which is allowed, so it prints 5.
  the real output 1 and 5
   was i right yes i was  right because i run the code and get the same output which are 1 and 5
-so the   the prediction is 1 and 5 
+so the  the prediction is 1 and 5 
