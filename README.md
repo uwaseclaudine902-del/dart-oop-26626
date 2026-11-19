@@ -37,18 +37,18 @@ enough money. This keeps the card safe.
 shows 40. I use ~/ because money here is a whole number (int).
 
 ## Part 4: Bug table
-| Bug | The line | Why it is wrong (your words) | Your fix |
+
+| Bug | The line | Why it is wrong | Your fix |
 |---|---|---|---|
-| 1 | `String _brand;` and `int _battery;` | The fields had no starting value, and Dart does not allow a String or int to be empty (null). | `String _brand = '';` and `int _battery = 0;` |
-| 2 | `SmartPhone(String brand, int battery, String system) {` | It did not call the parent constructor, but Phone needs a brand and battery. | Added `: super(brand, battery)` |
-| 3 | `@override void restart()` | @override only works when the parent has that method, and Phone has no restart(). | Removed @override |
-| 4 | `p.battery = 100;` | Phone had a getter for battery but no setter. | Added a setter that accepts only 0 to 100 |
-| 5 | `print(p.battery());` | battery is a getter, not a method, so it must not use (). | `print(p.battery);` |
+| 1 | String _brand; and int _battery; | The fields had no starting value AND MUST BE INITIALIZE BEFORE USED | String _brand = ''; and int _battery = 0; |
+| 2 | SmartPhone(String brand, int battery, String system) { | It did not call the parent constructor MEANS that the contructor musr correctly initialized the object field | Added : super(brand, battery) |
+| 3 | @override void restart() | The parent Phone has no restart method | Removed @override |
+| 4 | p.battery = 100; | There was no setter for battery | Added a setter that accepts 0 to 100 |
+| 5 | print(p.battery()); | battery is a getter, so no () | print(p.battery); |
 
 | Not a bug | Why is this line fine? |
 |---|---|
-| `Phone p = new Phone('Tecno', 50);` | In Dart the word `new` is optional, so this line is allowed. |
-
+| Phone p = new Phone('Tecno', 50); | In Dart, new is optional, so the line is allowed |
 ## Part 5
 My prediction: 1 and then 5
 
